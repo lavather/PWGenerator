@@ -3,23 +3,7 @@ const characters =["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","
  "0", "1", "2", "3", "4", "5", "6", "7", "8", "9","~","`","!","@","#","$","%","^","&","*","(",")","_","-","+","=","{","[","}","]",",","|",":",";","<",">",".","?",
 "/"];
 
-//create a for loop that creates an array out of random numbers up to the amount of spaces previously defined
-
-//create random numbers out of this array
-
 let randomNumber=Math.floor(Math.random()*characters.length)
-console.log(randomNumber)
-
-//make a for loop for the defined number x for amount of characters:
-
-
-
-
-
-//create a for loop that counts down and creates a new array with the correct characters from the randomly selected spot in the original array
-//figure out a way to get the number assigned to n from user input
-//create a text field that takes user input
-
 
 function startGenerating(){
     
@@ -27,6 +11,9 @@ function startGenerating(){
     let generatedPassword2=[]
     let nEl=document.getElementById("length")
     x=Number(nEl.value)
+    if (x>32){
+        x=32
+    }
     for (n=x; n>0; n--){
         randomNumber1=Math.floor(Math.random()*characters.length)
         randomNumber2=Math.floor(Math.random()*characters.length)
@@ -35,13 +22,36 @@ function startGenerating(){
         generatedPassword1.push(spot1)
         generatedPassword2.push(spot2)
     }
+    
     let characterEl=document.getElementById("character-el")
     let characterEl2=document.getElementById("character-el2")
     characterEl.textContent=generatedPassword1.join('')
     characterEl2.textContent=generatedPassword2.join('')
 }
 
+function copyToClipboard(element) {
+    let text = element.textContent;
+    let textArea = document.createElement("textarea");
+    textArea.value = text;
+    textArea.setAttribute("readonly", "");
+    textArea.style.position = "absolute";
+    textArea.style.left = "-9999px";
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand("copy");
+    document.body.removeChild(textArea);
+}
 
+// Event listener for "character-el"
+let copyTarget = document.getElementById("character-el");
+copyTarget.addEventListener("click", function() {
+    copyToClipboard(copyTarget);
+});
 
+// Event listener for "character-el2"
+let copyTarget2 = document.getElementById("character-el2");
+copyTarget2.addEventListener("click", function() {
+    copyToClipboard(copyTarget2);
+});
 
 
