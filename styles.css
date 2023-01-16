@@ -3,11 +3,14 @@ body {
     font-family: 'Karla', sans-serif;
     margin: 10%;
     height:500px;
-    width:500px;
+    width:600px;
     background-color:#1F2937;
     color:hsl(175, 60%, 92%);
     line-height:30px;
     white-space:nowrap; 
+    border-radius:10px;
+    border:3px solid hsl(175, 60%, 92%);
+    padding:20px;
 }
 
 h1{
@@ -37,7 +40,9 @@ h3{
 
 #length{
     display:flex;
+    height: 25px;
     border:none;
+    border-radius:5px;
     background-color:#273549;
     color:#4ADF86;
     text-align:center;
@@ -46,6 +51,9 @@ h3{
 #length::-webkit-inner-spin-button{
     -webkit-appearance: none;
     margin:o;
+}
+#length::placeholder{
+    color:hsl(175, 60%, 92%);
 }
 
 #submitButton{
@@ -56,6 +64,7 @@ h3{
     color:hsl(175, 60%, 92%);
     display:flex;
     border:none;
+    border-radius: 5px;
     line-height:24px;
     font-size:16px;
 }
@@ -67,6 +76,7 @@ h3{
     align-items: center;
     text-align:center;
     font:"Inter";
+    
 }
 
 #character-el{
@@ -78,14 +88,16 @@ h3{
     border-right:6px solid #273549;
     font-size:small;
     color:#55F991;
-    width: 211px;
+    width: 271px;
     height: 39px;
     left: 52px;
     top: 396px;
     margin-right:10px;
+    margin-top:30px;
     display: flex;
     align-items: center;
     justify-content: center;
+    
 }
 
 #character-el2{
@@ -97,13 +109,20 @@ h3{
     border-right:6px solid #273549;
     font-size:small;
     color:#55F991;
-    width: 211px;
+    width: 271px;
     height: 39px;
     left: 52px;
     top: 396px;
     margin-left:10px;
+    margin-top:30px;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+#description{
+    font-size:medium;
+    font-weight: 200;
+    line-height:15px;
+    color: rgb(194, 189, 189);
 }
 
