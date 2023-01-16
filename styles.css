@@ -46,8 +46,6 @@ h3{
     background-color:#273549;
     color:#4ADF86;
     text-align:center;
-    -moz-appearance: textfield;
-    appearance: textfield;
 }
 #length::-webkit-inner-spin-button,
 #length::-webkit-inner-spin-button{
