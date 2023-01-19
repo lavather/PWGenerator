@@ -127,8 +127,12 @@ h3{
     line-height:15px;
     color: rgb(194, 189, 189);
 }
-#copied-text{
-    font-size: small;
-    text-align:center;
-}
 
+.centered{
+    border-top:2px solid #2F3E53;
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+    text-align:center;
+    font:"Inter";
+}
