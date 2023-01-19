@@ -1,72 +1,36 @@
-const characters =["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z",
-"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z",
- "0", "1", "2", "3", "4", "5", "6", "7", "8", "9","~","`","!","@","#","$","%","^","&","*","(",")","_","-","+","=","{","[","}","]",",","|",":",";","<",">",".","?",
-"/"];
-
-let randomNumber=Math.floor(Math.random()*characters.length)
-
-function startGenerating(){
-    
-    let generatedPassword1=[]
-    let generatedPassword2=[]
-    let nEl=document.getElementById("length")
-    x=Number(nEl.value)
-    if (x>32){
-        x=32
-    }
-    for (n=x; n>0; n--){
-        randomNumber1=Math.floor(Math.random()*characters.length)
-        randomNumber2=Math.floor(Math.random()*characters.length)
-        let spot1=characters[randomNumber1]
-        let spot2=characters[randomNumber2]
-        generatedPassword1.push(spot1)
-        generatedPassword2.push(spot2)
-    }
-    
-    let characterEl=document.getElementById("character-el")
-    let characterEl2=document.getElementById("character-el2")
-    characterEl.textContent=generatedPassword1.join('')
-    characterEl2.textContent=generatedPassword2.join('')
-}
-
-function copyToClipboard(element) {
-
-    let text = element.textContent;
-    let textArea = document.createElement("textarea");
-    textArea.value = text;
-    textArea.setAttribute("readonly", "");
-    textArea.style.position = "absolute";
-    textArea.style.left = "-9999px";
-    document.body.appendChild(textArea);
-    textArea.select();
-    document.execCommand("copy");
-    
-    
-    document.body.removeChild(textArea);
-
-
-}
-
-
-// Event listener for "character-el"
-let copyTarget = document.getElementById("character-el");
-copyTarget.addEventListener("click", function() {
-    copyToClipboard(copyTarget);
-    let copiedText=document.getElementById("copied-text")
-    copiedText.textContent="copied to clipboard"
-    setTimeout(function(){
-        copiedText.textContent=""
-        }, 3000)
-});
-// Event listener for "character-el2"
-let copyTarget2 = document.getElementById("character-el2");
-copyTarget2.addEventListener("click", function() {
-    copyToClipboard(copyTarget2);
-    let copiedText2=document.getElementById("copied-textTwo")
-    copiedText2.textContent="copied to clipboard"
-    setTimeout(function(){
-        copiedText2.textContent=""
-        }, 3000)
-});
-
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter&family=Karla:wght@800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <h1></h1>
+        <h1>Generate a</h1>
+        <h1 id="secondh1">random Password</h1>
+        <h3>Never use an insecure Password again!</h3>
+        
+        <div class="separate" >
+            <input type="number" placeholder="enter Size, max 32" id="length">
+        </div>
+        <div class="separate" >
+            <button id="submitButton" onclick="startGenerating()">Generate Passwords</button>
+        </div>
+        <div class="flexx">
+          
+            <p  id="character-el" onclick="setTimeout()"></p>
+            <p  id="character-el2" onclick="setTimeout()"></p>
+        </div>
+        <div class="centered"> 
+            <p id="copied-text" >hallo</p>
+            <p id="copied-textTwo" >2</p>
+        </div>
+        <p id="description">Just click on the password you want.<br>It will be copied to your clipboard!</p>
+        
+        <script src="index.js"></script>
+    </body>
+</html>
 
