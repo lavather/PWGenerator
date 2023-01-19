@@ -40,6 +40,11 @@ function copyToClipboard(element) {
     textArea.select();
     document.execCommand("copy");
     document.body.removeChild(textArea);
+    let copiedMessage=document.getElementById("copied-text")
+    copiedMessage.textContent="copied to clipboard"
+    setTimeout(function(){
+        copiedMessage.remove();
+    },    3000)
 }
 
 // Event listener for "character-el"
