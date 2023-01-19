@@ -46,6 +46,8 @@ h3{
     background-color:#273549;
     color:#4ADF86;
     text-align:center;
+    -moz-appearance: textfield;
+    appearance: textfield;
 }
 #length::-webkit-inner-spin-button,
 #length::-webkit-inner-spin-button{
@@ -124,5 +126,9 @@ h3{
     font-weight: 200;
     line-height:15px;
     color: rgb(194, 189, 189);
+}
+#copied-text{
+    font-size: small;
+    text-align:center;
 }
 
