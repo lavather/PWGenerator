@@ -2,8 +2,8 @@ body {
     font-family: 'Inter', sans-serif;
     font-family: 'Karla', sans-serif;
     margin: 10%;
-    height:50%;
-    width:80%;
+    height:500px;
+    width:600px;
     background-color:#1F2937;
     color:hsl(175, 60%, 92%);
     line-height:30px;
