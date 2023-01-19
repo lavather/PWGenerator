@@ -129,7 +129,7 @@ h3{
 }
 
 .centered{
-    border-top:2px solid #2F3E53;
+    border:none;
     display:flex;
     justify-content:space-between;
     align-items: center;
