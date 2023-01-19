@@ -30,6 +30,7 @@ function startGenerating(){
 }
 
 function copyToClipboard(element) {
+
     let text = element.textContent;
     let textArea = document.createElement("textarea");
     textArea.value = text;
@@ -39,24 +40,33 @@ function copyToClipboard(element) {
     document.body.appendChild(textArea);
     textArea.select();
     document.execCommand("copy");
+    
+    
     document.body.removeChild(textArea);
-    let copiedMessage=document.getElementById("copied-text")
-    copiedMessage.textContent="copied to clipboard"
-    setTimeout(function(){
-        copiedMessage.remove();
-    },    3000)
+
+
 }
+
 
 // Event listener for "character-el"
 let copyTarget = document.getElementById("character-el");
 copyTarget.addEventListener("click", function() {
     copyToClipboard(copyTarget);
+    let copiedText=document.getElementById("copied-text")
+    copiedText.textContent="copied to clipboard"
+    setTimeout(function(){
+        copiedText.textContent=""
+        }, 3000)
 });
-
 // Event listener for "character-el2"
 let copyTarget2 = document.getElementById("character-el2");
 copyTarget2.addEventListener("click", function() {
     copyToClipboard(copyTarget2);
+    let copiedText2=document.getElementById("copied-textTwo")
+    copiedText2.textContent="copied to clipboard"
+    setTimeout(function(){
+        copiedText2.textContent=""
+        }, 3000)
 });
 
 
